@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+archive=$1
+mkdir -p "$(dirname "$archive")"
+tar --sort=name --mtime=@0 --owner=0 --group=0 --numeric-owner \
+  --mode='a=rX,u+w' -cf "$archive" -C apps/web/dist .

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+if [[ ! -x .cache/bin/task ]]; then
+  printf 'Run bash scripts/bootstrap before committing.\n' >&2
+  exit 1
+fi
+npm run task -- check SECRET_SCAN=staged

@@ -1,0 +1,29 @@
+name: Work item
+description: Specify an independently deliverable change
+body:
+  - type: textarea
+    id: intent
+    attributes:
+      label: Intent
+      description: Describe the outcome and who needs it.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Record the boundaries and relevant architecture decisions.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List observable outcomes and how to verify them.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and open decisions
+      description: Link blocking issues and capture questions that affect implementation.

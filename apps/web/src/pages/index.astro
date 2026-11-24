@@ -1,0 +1,55 @@
+---
+import { loadCatalog } from "../lib/catalog";
+
+const addons = loadCatalog();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>WoW Signal</title>
+  </head>
+  <body>
+    <main>
+      <h1>WoW Signal</h1>
+      <p>
+        Discover World of Warcraft add-ons through signals beyond popularity.
+      </p>
+      <section aria-labelledby="sample-catalog">
+        <h2 id="sample-catalog">Sample catalog</h2>
+        <ul>
+          {addons.map((addon) => (
+            <li>
+              <h3>{addon.name}</h3>
+              <p>{addon.summary}</p>
+              <a href={addon.source}>View {addon.name} source</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    background: #151b20;
+    color: #edf3f5;
+    font:
+      1rem/1.6 system-ui,
+      sans-serif;
+  }
+
+  main {
+    max-width: 44rem;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+  }
+
+  a {
+    color: #99e5c8;
+  }
+</style>

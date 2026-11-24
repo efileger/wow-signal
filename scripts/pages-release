@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+: "${CLOUDFLARE_API_TOKEN:?Set the production environment secret}"
+: "${CLOUDFLARE_ACCOUNT_ID:?Set the Cloudflare account ID}"
+: "${CLOUDFLARE_PROJECT_NAME:?Set the Pages project name}"
+[[ "$CLOUDFLARE_ACCOUNT_ID" =~ ^[a-f0-9]{32}$ ]]
+[[ "$CLOUDFLARE_PROJECT_NAME" =~ ^[a-z0-9][a-z0-9-]*$ ]]
+
+project_url="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$CLOUDFLARE_PROJECT_NAME"
+production_url="https://$CLOUDFLARE_PROJECT_NAME.pages.dev"
+api() {
+  curl --silent --show-error --fail-with-body --max-time 30 \
+    --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "$@"
+}
+
+verify_production() {
+  local expected=$1
+  local deployment
+  for _ in {1..6}; do
+    if deployment=$(api "$project_url" |
+      jq -ce --arg sha "$expected" '
+        .result.canonical_deployment
+        | select(.deployment_trigger.metadata.commit_hash == $sha and .latest_stage.status == "success")
+        | {id, url, revision: .deployment_trigger.metadata.commit_hash}
+      ') && node scripts/http-contract.mjs "$production_url" "$expected" --health; then
+      printf '%s\n' "$deployment"
+      return 0
+    fi
+    sleep 5
+  done
+  printf 'Production verification failed for %s. Inspect the deployment and roll back if needed.\n' "$expected" >&2
+  return 1
+}
+
+case "$1" in
+  deploy)
+    revision=$(git rev-parse HEAD)
+    trunk=$(git ls-remote --exit-code origin refs/heads/main | cut -f1)
+    if [[ "$revision" != "$trunk" ]]; then
+      printf 'Skipping %s because main is now %s.\n' "$revision" "$trunk"
+      exit 0
+    fi
+    bundle=$2
+    (cd "$bundle" && sha256sum --check site.tar.sha256)
+    scratch=$(mktemp -d)
+    trap 'rm -rf "$scratch"' EXIT
+    tar -xf "$bundle/site.tar" -C "$scratch"
+    jq -e --arg sha "$revision" '.revision == $sha' "$scratch/release.json" >/dev/null
+    node_modules/.bin/wrangler pages deploy "$scratch" \
+      --project-name "$CLOUDFLARE_PROJECT_NAME" --branch main \
+      --commit-hash "$revision" --commit-dirty=false
+    verify_production "$revision"
+    ;;
+  rollback)
+    deployment_id=$2
+    [[ "$deployment_id" =~ ^[a-fA-F0-9]{8}(-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$ ]]
+    deployment_url="$project_url/deployments/$deployment_id"
+    revision=$(api "$deployment_url" |
+      jq -er '.result | select(.environment == "production" and .latest_stage.status == "success") | .deployment_trigger.metadata.commit_hash')
+    api --request POST "$deployment_url/rollback" | jq -e '.result | {id, url}'
+    verify_production "$revision"
+    ;;
+  *) printf 'Usage: %s {deploy BUNDLE|rollback DEPLOYMENT_ID}\n' "$0" >&2; exit 2 ;;
+esac

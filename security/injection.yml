@@ -1,0 +1,23 @@
+rules:
+  - id: unsafe-html-injection
+    message: Use escaped template output or textContent for externally supplied content.
+    languages: [javascript, typescript]
+    severity: ERROR
+    pattern-either:
+      - pattern: $ELEMENT.innerHTML = $VALUE
+      - pattern: $ELEMENT.outerHTML = $VALUE
+      - pattern: $ELEMENT.insertAdjacentHTML(...)
+  - id: dynamic-code-evaluation
+    message: Use data parsing and explicit operations instead of dynamic JavaScript evaluation.
+    languages: [javascript, typescript]
+    severity: ERROR
+    pattern-either:
+      - pattern: eval(...)
+      - pattern: new Function(...)
+  - id: astro-unescaped-html
+    message: Use escaped Astro template output for catalog content.
+    languages: [generic]
+    severity: ERROR
+    paths:
+      include: ["**/*.astro"]
+    pattern-regex: 'set:html\s*='
