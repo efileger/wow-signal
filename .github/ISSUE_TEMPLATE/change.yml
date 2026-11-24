@@ -12,7 +12,7 @@ body:
     id: scope
     attributes:
       label: Scope
-      description: Record the boundaries and relevant architecture decisions.
+      description: Record the boundaries and relevant decisions. Aim for 50–250 lines of code changed and explain batches over roughly 500 lines.
     validations:
       required: true
   - type: textarea

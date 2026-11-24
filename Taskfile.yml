@@ -16,6 +16,7 @@ tasks:
     cmds:
       - npm run format:check
       - npm run lint
+      - .venv/bin/rumdl check --no-cache .
       - node scripts/check-skills.mjs
       - .cache/bin/actionlint
       - bash scripts/scan-secrets {{.SECRET_SCAN | default "tree"}}

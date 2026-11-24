@@ -1,0 +1,4 @@
+[global]
+disable = ["MD013"]
+include = ["**/*.md", ".agents/**/*.md", ".github/**/*.md"]
+exclude = ["**/node_modules/**", "**/.cache/**", "**/.venv/**", "**/.astro/**", "**/dist/**"]
