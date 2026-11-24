@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+scratch=$(mktemp -d)
+
+# A kernel-assigned loopback port allows concurrent checks without collisions.
+python3 -u -m http.server 0 --bind 127.0.0.1 --directory apps/web/dist >"$scratch/server.log" 2>&1 &
+server=$!
+trap 'kill "$server" 2>/dev/null || true; rm -rf "$scratch"' EXIT
+
+# Python flushes its listening address when unbuffered. Read it before checking HTTP.
+for _ in {1..50}; do
+  port=$(sed -n 's/^Serving HTTP on 127\.0\.0\.1 port \([0-9]*\) .*/\1/p' "$scratch/server.log")
+  if [[ -n "$port" ]]; then
+    node scripts/http-contract.mjs "http://127.0.0.1:$port" "$(git rev-parse HEAD)"
+    exit
+  fi
+  kill -0 "$server" 2>/dev/null || break
+  sleep 0.1
+done
+cat "$scratch/server.log" >&2
+exit 1

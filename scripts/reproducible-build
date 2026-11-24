@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+scratch=$(mktemp -d)
+trap 'rm -rf "$scratch"' EXIT
+bash scripts/package-site "$scratch/first.tar"
+bash scripts/build-site
+bash scripts/package-site "$scratch/second.tar"
+cmp "$scratch/first.tar" "$scratch/second.tar"
+sha256sum "$scratch/second.tar"

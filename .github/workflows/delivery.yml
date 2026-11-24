@@ -1,0 +1,103 @@
+name: Delivery
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      rollback_deployment_id:
+        description: Previous successful Cloudflare Pages production deployment ID
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    if: github.event_name != 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version-file: .node-version
+          package-manager-cache: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version-file: .python-version
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+        with:
+          version: "0.13.9"
+          enable-cache: false
+      - run: npm install --global npm@11.19.1
+      - run: bash scripts/bootstrap
+      - name: Scan new commits
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: bash scripts/scan-secrets history "$BASE"
+      - run: npm run task -- verify
+      - name: Verify reproducible output and package site
+        if: github.event_name == 'push'
+        run: |
+          bash scripts/reproducible-build
+          bash scripts/package-site "$RUNNER_TEMP/wow-signal-release/site.tar"
+          cd "$RUNNER_TEMP/wow-signal-release"
+          sha256sum site.tar > site.tar.sha256
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        if: github.event_name == 'push'
+        with:
+          name: site-${{ github.sha }}
+          path: ${{ runner.temp }}/wow-signal-release/
+          if-no-files-found: error
+
+  production:
+    if: >-
+      always() && !cancelled() && github.ref == 'refs/heads/main' &&
+      ((github.event_name == 'push' && needs.verify.result == 'success') ||
+        github.event_name == 'workflow_dispatch')
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment: production
+    concurrency:
+      group: pages-production
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version-file: .node-version
+          package-manager-cache: false
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        if: github.event_name == 'push'
+        with:
+          name: site-${{ github.sha }}
+          path: ${{ runner.temp }}/wow-signal-release
+      - name: Install locked deployment CLI
+        if: github.event_name == 'push'
+        run: |
+          npm install --global npm@11.19.1
+          npm ci --ignore-scripts --no-audit
+      - name: Deploy or roll back
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_PROJECT_NAME: ${{ vars.CLOUDFLARE_PROJECT_NAME }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ROLLBACK_ID: ${{ inputs.rollback_deployment_id }}
+          EVENT: ${{ github.event_name }}
+          WRANGLER_SEND_METRICS: "false"
+        run: |
+          if [[ "$EVENT" == workflow_dispatch ]]; then
+            bash scripts/pages-release rollback "$ROLLBACK_ID"
+          else
+            bash scripts/pages-release deploy "$RUNNER_TEMP/wow-signal-release"
+          fi

@@ -1,0 +1,32 @@
+version: "3"
+
+tasks:
+  setup:
+    desc: Install pinned tooling and Git hooks
+    cmds:
+      - bash scripts/bootstrap
+
+  dev:
+    desc: Start the catalog development server
+    cmds:
+      - npm run dev -- {{.CLI_ARGS}}
+
+  check:
+    desc: Run fast pre-commit checks
+    cmds:
+      - npm run format:check
+      - npm run lint
+      - node scripts/check-skills.mjs
+      - .cache/bin/actionlint
+      - bash scripts/scan-secrets {{.SECRET_SCAN | default "tree"}}
+      - npm run typecheck
+      - XDG_CONFIG_HOME="$PWD/.cache/config" .venv/bin/semgrep scan --config security/injection.yml --metrics=off --disable-version-check --error apps/web/src
+      - npm run test:unit
+
+  verify:
+    desc: Run the fast checks, dependency audit, build, and artifact acceptance
+    cmds:
+      - task: check
+      - npm audit --audit-level=high
+      - bash scripts/build-site
+      - bash scripts/acceptance

@@ -1,0 +1,34 @@
+{
+  "name": "wow-signal",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@11.19.1",
+  "engines": {
+    "node": "24.22.3",
+    "npm": "11.19.1"
+  },
+  "scripts": {
+    "dev": "cd apps/web && ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "cd apps/web && ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "typecheck": "cd apps/web && ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "task": ".cache/bin/task",
+    "test:unit": "vitest run",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint apps scripts"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "@eslint/js": "10.0.1",
+    "@types/node": "24.13.1",
+    "astro": "7.4.13",
+    "eslint": "10.15.0",
+    "eslint-plugin-astro": "3.2.1",
+    "prettier": "3.10.1",
+    "prettier-plugin-astro": "1.1.2",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.74.0",
+    "vitest": "5.1.1",
+    "wrangler": "4.168.0"
+  }
+}

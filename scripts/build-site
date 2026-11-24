@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+export WOW_SIGNAL_REVISION
+WOW_SIGNAL_REVISION=$(git rev-parse HEAD)
+npm run build
