@@ -6,6 +6,8 @@
 
 GitHub issues are the canonical specs for agent work. Keep intent, scope, acceptance criteria, dependencies, and progress in the issue. Record durable working agreements here, architecture and operational guides in `docs/architecture/`, architectural decisions in `docs/decisions/`, and reusable workflows in `.agents/skills/`.
 
+Concentrate engineering effort on the evidence and assessment that help players choose add-ons. Use Wardley Mapping as a guide to reuse established capabilities and reserve custom development for material gaps and distinctive product needs. Before introducing tooling or automation, check existing repository and platform capabilities, then maintained open-source options. Prefer configuration and small integrations when sufficient. For a nontrivial choice, record the alternatives and rationale in the issue, considering reliability, ongoing maintenance and cognitive load, licensing, cost, and security.
+
 Prefer one independently deliverable change per issue and short-lived branch. Aim for 50–250 lines of code changed per issue and plan for roughly 500 or fewer. Treat these as sizing guides. If a change is larger, look for a coherent, independently verifiable slice first. Keep a larger batch together when splitting would make delivery or verification harder, and record why in the issue. Merge small changes to `main` frequently and pause feature merges while `main` is red.
 
 Use the existing Cloud checkout. Create branches or external GitHub artifacts within the authority given for the task.
