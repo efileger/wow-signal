@@ -1,6 +1,8 @@
 # WoW Signal
 
-WoW Signal helps World of Warcraft Forever players discover add-ons using signals beyond downloads and popularity. The first release serves a sample catalog to exercise development, deployment, and recovery. The sample does not imply a compatibility or quality rating.
+WoW Signal helps World of Warcraft Forever players assess and compare add-ons using evidence beyond downloads and popularity. The first release serves a sample catalog to exercise development, deployment, and recovery. The sample does not imply a compatibility or quality rating.
+
+See the [product direction](docs/product/vision.md) for what WoW Signal aims to measure and the scope of the first product release.
 
 ## Develop in Codex Cloud
 
