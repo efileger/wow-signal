@@ -16,3 +16,5 @@ npm run task -- verify
 ```
 
 If Astro starts in the background, use `npm run dev -- status` or `npm run dev -- stop`. Use the pinned Linux toolchain in [the architecture notes](docs/architecture/README.md). Run setup again when the lockfiles or tool pins change. Use [AGENTS.md](AGENTS.md) for the issue and review workflow, and [the delivery runbook](docs/architecture/delivery.md) for Cloudflare setup and recovery.
+
+To collect the first add-on evidence snapshot without building or deploying the site, see [manual evidence collection](docs/architecture/README.md#collect-evidence-manually).
