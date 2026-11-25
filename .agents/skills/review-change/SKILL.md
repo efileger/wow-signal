@@ -5,6 +5,6 @@ description: Use when a substantive change is ready for a pull request or change
 
 # Review change
 
-Use a fresh Codex review task, native GitHub Codex review, or a human reviewer independent of implementation. Pass the issue, target merge base, and exact revision or diff. Assess observable behavior, failure paths, release safety, and whether existing tests would catch a regression. Ground findings in the changed code and give a concrete consequence. Report any missing evidence.
+Use a fresh Codex review task, native GitHub Codex review, or a human reviewer independent of implementation. Pass the issue, target merge base, and exact revision or diff. Assess observable behavior, failure paths, release safety, and whether existing tests would catch a regression. Ground findings in the changed code and give a concrete consequence. Apply [yagni-review](../yagni-review/SKILL.md), [test-hierarchy-review](../test-hierarchy-review/SKILL.md) where behavior or verification changed, and [docs-review](../docs-review/SKILL.md) to the current diff. Report any missing evidence and concrete findings from these passes.
 
 Resolve blocking findings and review substantive updates again. Record the reviewed revision, reviewer, issue link, and exact verification results in the PR template. If an independent reviewer is unavailable, mark review pending. Treat architecture or product tradeoffs as decisions for the project owner.
