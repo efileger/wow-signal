@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "provider": "github-rest",
+  "collectedAt": "2026-11-25T21:31:27.043Z",
+  "client": {
+    "name": "World of Warcraft: Forever",
+    "interface": 16001
+  },
+  "addons": [
+    {
+      "id": "github:905553",
+      "name": "Bagnon",
+      "repository": {
+        "value": {
+          "id": 905553,
+          "url": "https://github.com/Jaliborc/Bagnon",
+          "stars": 207,
+          "pushedAt": "2026-11-25T15:26:46Z",
+          "license": null
+        },
+        "source": {
+          "url": "https://api.github.com/repos/Jaliborc/Bagnon",
+          "observedAt": "2026-11-25T21:31:21.099Z"
+        }
+      },
+      "release": {
+        "value": null,
+        "source": {
+          "url": "https://api.github.com/repos/Jaliborc/Bagnon/releases?per_page=5",
+          "observedAt": "2026-11-25T21:31:21.349Z"
+        }
+      },
+      "revision": {
+        "value": {
+          "kind": "default-branch",
+          "ref": "master",
+          "sha": "28df239e8eeaf634f247dfc5cd34be19aa254d5b"
+        },
+        "source": {
+          "url": "https://api.github.com/repos/Jaliborc/Bagnon/commits/master",
+          "observedAt": "2026-11-25T21:31:21.616Z"
+        }
+      },
+      "clientDeclaration": {
+        "value": [120105, 50504, 40402, 30404, 20506, 16001, 11509],
+        "source": {
+          "url": "https://api.github.com/repos/Jaliborc/Bagnon/contents/Bagnon.toc?ref=28df239e8eeaf634f247dfc5cd34be19aa254d5b",
+          "observedAt": "2026-11-25T21:31:21.810Z"
+        }
+      },
+      "workflows": {
+        "value": null,
+        "source": {
+          "url": "https://api.github.com/repos/Jaliborc/Bagnon/contents/.github/workflows?ref=28df239e8eeaf634f247dfc5cd34be19aa254d5b",
+          "observedAt": "2026-11-25T21:31:22.187Z"
+        }
+      }
+    },
+    {
+      "id": "github:716469792",
+      "name": "BetterBags",
+      "repository": {
+        "value": {
+          "id": 716469792,
+          "url": "https://github.com/Cidan/BetterBags",
+          "stars": 106,
+          "pushedAt": "2026-11-22T22:37:14Z",
+          "license": "MIT"
+        },
+        "source": {
+          "url": "https://api.github.com/repos/Cidan/BetterBags",
+          "observedAt": "2026-11-25T21:31:22.681Z"
+        }
+      },
+      "release": {
+        "value": {
+          "id": 449453689,
+          "tag": "v0.9.5",
+          "publishedAt": "2026-11-18T02:37:07Z",
+          "assets": [
+            {
+              "id": 761574077,
+              "name": "BetterBags-v0.9.5.zip",
+              "downloads": 150
+            }
+          ]
+        },
+        "source": {
+          "url": "https://api.github.com/repos/Cidan/BetterBags/releases?per_page=5",
+          "observedAt": "2026-11-25T21:31:23.285Z"
+        }
+      },
+      "revision": {
+        "value": {
+          "kind": "release-tag",
+          "ref": "v0.9.5",
+          "sha": "a1116a1a583aaea382335be4a618217c2c9d0e65"
+        },
+        "source": {
+          "url": "https://api.github.com/repos/Cidan/BetterBags/commits/v0.9.5",
+          "observedAt": "2026-11-25T21:31:23.619Z"
+        }
+      },
+      "clientDeclaration": {
+        "value": [16001],
+        "source": {
+          "url": "https://api.github.com/repos/Cidan/BetterBags/contents/BetterBags_Camelot.toc?ref=a1116a1a583aaea382335be4a618217c2c9d0e65",
+          "observedAt": "2026-11-25T21:31:23.859Z"
+        }
+      },
+      "workflows": {
+        "value": [
+          "bugboard.yml",
+          "claude.yml",
+          "luacheck.yml",
+          "release.yml",
+          "release_alpha.yaml",
+          "test.yml"
+        ],
+        "source": {
+          "url": "https://api.github.com/repos/Cidan/BetterBags/contents/.github/workflows?ref=a1116a1a583aaea382335be4a618217c2c9d0e65",
+          "observedAt": "2026-11-25T21:31:24.192Z"
+        }
+      }
+    },
+    {
+      "id": "github:1411699833",
+      "name": "Bags Forever",
+      "repository": {
+        "value": {
+          "id": 1411699833,
+          "url": "https://github.com/APGM82/BagsForever",
+          "stars": 0,
+          "pushedAt": "2026-11-12T07:56:16Z",
+          "license": "MIT"
+        },
+        "source": {
+          "url": "https://api.github.com/repos/APGM82/BagsForever",
+          "observedAt": "2026-11-25T21:31:24.746Z"
+        }
+      },
+      "release": {
+        "value": {
+          "id": 407835480,
+          "tag": "v1.00",
+          "publishedAt": "2026-10-09T11:10:29Z",
+          "assets": [
+            {
+              "id": 624734747,
+              "name": "BagsForever-1.00.zip",
+              "downloads": 12
+            }
+          ]
+        },
+        "source": {
+          "url": "https://api.github.com/repos/APGM82/BagsForever/releases?per_page=5",
+          "observedAt": "2026-11-25T21:31:25.010Z"
+        }
+      },
+      "revision": {
+        "value": {
+          "kind": "release-tag",
+          "ref": "v1.00",
+          "sha": "deaad5a278e455e573a33c483ee81b777812d6c0"
+        },
+        "source": {
+          "url": "https://api.github.com/repos/APGM82/BagsForever/commits/v1.00",
+          "observedAt": "2026-11-25T21:31:25.269Z"
+        }
+      },
+      "clientDeclaration": {
+        "value": [16001],
+        "source": {
+          "url": "https://api.github.com/repos/APGM82/BagsForever/contents/BagsForever/BagsForever.toc?ref=deaad5a278e455e573a33c483ee81b777812d6c0",
+          "observedAt": "2026-11-25T21:31:25.461Z"
+        }
+      },
+      "workflows": {
+        "value": null,
+        "source": {
+          "url": "https://api.github.com/repos/APGM82/BagsForever/contents/.github/workflows?ref=deaad5a278e455e573a33c483ee81b777812d6c0",
+          "observedAt": "2026-11-25T21:31:25.691Z"
+        }
+      }
+    },
+    {
+      "id": "github:1379284941",
+      "name": "AKForeverBags",
+      "repository": {
+        "value": {
+          "id": 1379284941,
+          "url": "https://github.com/ajkatz/AKForeverBags",
+          "stars": 0,
+          "pushedAt": "2026-11-13T21:10:28Z",
+          "license": "MIT"
+        },
+        "source": {
+          "url": "https://api.github.com/repos/ajkatz/AKForeverBags",
+          "observedAt": "2026-11-25T21:31:26.018Z"
+        }
+      },
+      "release": {
+        "value": {
+          "id": 444742227,
+          "tag": "v0.5.1",
+          "publishedAt": "2026-11-13T21:10:52Z",
+          "assets": [
+            {
+              "id": 745197918,
+              "name": "AKForeverBags-v0.5.1-forever.zip",
+              "downloads": 15
+            }
+          ]
+        },
+        "source": {
+          "url": "https://api.github.com/repos/ajkatz/AKForeverBags/releases?per_page=5",
+          "observedAt": "2026-11-25T21:31:26.414Z"
+        }
+      },
+      "revision": {
+        "value": {
+          "kind": "release-tag",
+          "ref": "v0.5.1",
+          "sha": "bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c"
+        },
+        "source": {
+          "url": "https://api.github.com/repos/ajkatz/AKForeverBags/commits/v0.5.1",
+          "observedAt": "2026-11-25T21:31:26.679Z"
+        }
+      },
+      "clientDeclaration": {
+        "value": [16001],
+        "source": {
+          "url": "https://api.github.com/repos/ajkatz/AKForeverBags/contents/AKForeverBags.toc?ref=bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c",
+          "observedAt": "2026-11-25T21:31:26.870Z"
+        }
+      },
+      "workflows": {
+        "value": [
+          "discord-announce.yml",
+          "package-check.yml",
+          "release.yml",
+          "tests.yml"
+        ],
+        "source": {
+          "url": "https://api.github.com/repos/ajkatz/AKForeverBags/contents/.github/workflows?ref=bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c",
+          "observedAt": "2026-11-25T21:31:27.042Z"
+        }
+      }
+    }
+  ]
+}
