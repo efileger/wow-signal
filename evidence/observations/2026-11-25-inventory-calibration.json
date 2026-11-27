@@ -1,0 +1,383 @@
+{
+  "schemaVersion": 1,
+  "task": "simple unified bags and search",
+  "clientInterface": 16001,
+  "asOf": "2026-11-25",
+  "addons": [
+    {
+      "addonId": "github:905553",
+      "criteria": {
+        "defaultPath": {
+          "rating": 2,
+          "revision": "28df239e8eeaf634f247dfc5cd34be19aa254d5b",
+          "rationale": "Inventory toggles, search and sort are enabled by default; runtime behavior and packaged Forever build unverified.",
+          "sources": [
+            {
+              "url": "https://github.com/Jaliborc/Bagnon/blob/28df239e8eeaf634f247dfc5cd34be19aa254d5b/src/defaults.lua#L11-L35",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "scope": {
+          "rating": 3,
+          "revision": "28df239e8eeaf634f247dfc5cd34be19aa254d5b",
+          "rationale": "Unified inventory and related bank/guild/vault features serve the inventory job.",
+          "sources": [
+            {
+              "url": "https://github.com/Jaliborc/Bagnon/blob/28df239e8eeaf634f247dfc5cd34be19aa254d5b/src/defaults.lua#L11-L35",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "differentiation": {
+          "rating": 2,
+          "revision": "28df239e8eeaf634f247dfc5cd34be19aa254d5b",
+          "rationale": "Cross-character search is a meaningful adjacent task; stock combined bags may suffice for basic search.",
+          "sources": [
+            {
+              "url": "https://github.com/Jaliborc/Bagnon/blob/28df239e8eeaf634f247dfc5cd34be19aa254d5b/src/defaults.lua#L11-L35",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            },
+            {
+              "url": "https://github.com/efileger/wow-signal/issues/10",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "releaseVerification": {
+          "rating": null,
+          "revision": "28df239e8eeaf634f247dfc5cd34be19aa254d5b",
+          "rationale": "No GitHub release or matching public check established; external checks unknown.",
+          "sources": [
+            {
+              "url": "https://github.com/efileger/wow-signal/issues/10",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "maintenance": {
+          "rating": 2,
+          "revision": "28df239e8eeaf634f247dfc5cd34be19aa254d5b",
+          "rationale": "Forever fixes in changelog and one prompt issue response; wider responsiveness unknown.",
+          "sources": [
+            {
+              "url": "https://github.com/Jaliborc/Bagnon/blob/28df239e8eeaf634f247dfc5cd34be19aa254d5b/Changelog.md",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            },
+            {
+              "url": "https://github.com/Jaliborc/Bagnon/issues/2224#issuecomment-7012895150",
+              "type": "observed",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "documentation": {
+          "rating": 2,
+          "revision": "28df239e8eeaf634f247dfc5cd34be19aa254d5b",
+          "rationale": "Actionable source and changelog available; packaged installation and behavior unverified.",
+          "sources": [
+            {
+              "url": "https://github.com/Jaliborc/Bagnon/blob/28df239e8eeaf634f247dfc5cd34be19aa254d5b/Changelog.md",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            },
+            {
+              "url": "https://github.com/Jaliborc/Bagnon/blob/28df239e8eeaf634f247dfc5cd34be19aa254d5b/src/defaults.lua#L11-L35",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "addonId": "github:716469792",
+      "criteria": {
+        "defaultPath": {
+          "rating": 1,
+          "revision": "a1116a1a583aaea382335be4a618217c2c9d0e65",
+          "rationale": "Search enabled without custom categories; vendor/guild-bank replacements and extra interactions broaden defaults; flavor-specific behavior unknown.",
+          "sources": [
+            {
+              "url": "https://github.com/Cidan/BetterBags/blob/a1116a1a583aaea382335be4a618217c2c9d0e65/core/constants.lua#L765-L848",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            },
+            {
+              "url": "https://github.com/Cidan/BetterBags/blob/a1116a1a583aaea382335be4a618217c2c9d0e65/core/database.lua#L22-L40",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "scope": {
+          "rating": 2,
+          "revision": "a1116a1a583aaea382335be4a618217c2c9d0e65",
+          "rationale": "Category organization is coherent but broader than simple bags/search.",
+          "sources": [
+            {
+              "url": "https://github.com/Cidan/BetterBags/blob/a1116a1a583aaea382335be4a618217c2c9d0e65/core/constants.lua#L1102-L1106",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            },
+            {
+              "url": "https://github.com/Cidan/BetterBags/blob/a1116a1a583aaea382335be4a618217c2c9d0e65/core/constants.lua#L765-L848",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "differentiation": {
+          "rating": 1,
+          "revision": "a1116a1a583aaea382335be4a618217c2c9d0e65",
+          "rationale": "Advanced categories are useful for a different player task; limited demonstrated benefit for simple search.",
+          "sources": [
+            {
+              "url": "https://github.com/Cidan/BetterBags/blob/a1116a1a583aaea382335be4a618217c2c9d0e65/core/constants.lua#L1102-L1106",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            },
+            {
+              "url": "https://github.com/efileger/wow-signal/issues/10",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "releaseVerification": {
+          "rating": 3,
+          "revision": "a1116a1a583aaea382335be4a618217c2c9d0e65",
+          "rationale": "Lua and Go checks and release workflow passed for v0.9.5 at the assessed revision.",
+          "sources": [
+            {
+              "url": "https://github.com/Cidan/BetterBags/actions/runs/44224349578",
+              "type": "observed",
+              "observedAt": "2026-11-25"
+            },
+            {
+              "url": "https://github.com/Cidan/BetterBags/actions/runs/44224369584",
+              "type": "observed",
+              "observedAt": "2026-11-25"
+            }
+          ],
+          "checkOutcome": "passed"
+        },
+        "maintenance": {
+          "rating": 2,
+          "revision": "a1116a1a583aaea382335be4a618217c2c9d0e65",
+          "rationale": "Prompt owner response in sampled issue; still open and review coverage unknown.",
+          "sources": [
+            {
+              "url": "https://github.com/Cidan/BetterBags/issues/1375",
+              "type": "observed",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "documentation": {
+          "rating": 2,
+          "revision": "a1116a1a583aaea382335be4a618217c2c9d0e65",
+          "rationale": "Source and relevant defaults documented; actual client behavior not independently verified.",
+          "sources": [
+            {
+              "url": "https://github.com/Cidan/BetterBags/blob/a1116a1a583aaea382335be4a618217c2c9d0e65/core/constants.lua#L765-L848",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            },
+            {
+              "url": "https://github.com/Cidan/BetterBags/blob/a1116a1a583aaea382335be4a618217c2c9d0e65/core/database.lua#L22-L40",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "addonId": "github:1411699833",
+      "criteria": {
+        "defaultPath": {
+          "rating": 1,
+          "revision": "deaad5a278e455e573a33c483ee81b777812d6c0",
+          "rationale": "Unified bags/bank enabled, but automatic junk selling is on by default; unrelated transactional side effect.",
+          "sources": [
+            {
+              "url": "https://github.com/APGM82/BagsForever/blob/deaad5a278e455e573a33c483ee81b777812d6c0/BagsForever/BagsForever.lua#L19-L36",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "scope": {
+          "rating": 2,
+          "revision": "deaad5a278e455e573a33c483ee81b777812d6c0",
+          "rationale": "Focused bag functionality with unrelated automatic selling by default.",
+          "sources": [
+            {
+              "url": "https://github.com/APGM82/BagsForever/blob/deaad5a278e455e573a33c483ee81b777812d6c0/BagsForever/BagsForever.lua#L19-L36",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            },
+            {
+              "url": "https://github.com/APGM82/BagsForever/blob/deaad5a278e455e573a33c483ee81b777812d6c0/README.md",
+              "type": "claimed",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "differentiation": {
+          "rating": null,
+          "revision": "deaad5a278e455e573a33c483ee81b777812d6c0",
+          "rationale": "No demonstrated improvement over the direct alternative yet.",
+          "sources": [
+            {
+              "url": "https://github.com/efileger/wow-signal/issues/10",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "releaseVerification": {
+          "rating": null,
+          "revision": "deaad5a278e455e573a33c483ee81b777812d6c0",
+          "rationale": "No matching public release checks established; private testing unknown.",
+          "sources": [
+            {
+              "url": "https://github.com/efileger/wow-signal/issues/10",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "maintenance": {
+          "rating": null,
+          "revision": "deaad5a278e455e573a33c483ee81b777812d6c0",
+          "rationale": "No representative issue-response sample; low activity alone is not adverse evidence.",
+          "sources": [
+            {
+              "url": "https://github.com/efileger/wow-signal/issues/10",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "documentation": {
+          "rating": 2,
+          "revision": "deaad5a278e455e573a33c483ee81b777812d6c0",
+          "rationale": "README gives practical install and search/sort guidance.",
+          "sources": [
+            {
+              "url": "https://github.com/APGM82/BagsForever/blob/deaad5a278e455e573a33c483ee81b777812d6c0/README.md",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "addonId": "github:1379284941",
+      "criteria": {
+        "defaultPath": {
+          "rating": 2,
+          "revision": "bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c",
+          "rationale": "Uses native combined-view/search, may require stock preference enabled; reagent merge and key opening adjacent to job.",
+          "sources": [
+            {
+              "url": "https://github.com/ajkatz/AKForeverBags/blob/bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c/README.md#L28-L62",
+              "type": "claimed",
+              "observedAt": "2026-11-25"
+            },
+            {
+              "url": "https://github.com/ajkatz/AKForeverBags/blob/bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c/Core.lua#L182-L192",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "scope": {
+          "rating": 3,
+          "revision": "bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c",
+          "rationale": "Purposeful native bag enhancement, with reagent grouping and related sorting.",
+          "sources": [
+            {
+              "url": "https://github.com/ajkatz/AKForeverBags/blob/bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c/Core.lua#L182-L192",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            },
+            {
+              "url": "https://github.com/ajkatz/AKForeverBags/blob/bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c/README.md#L28-L62",
+              "type": "claimed",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "differentiation": {
+          "rating": 2,
+          "revision": "bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c",
+          "rationale": "Preserves native UI and addresses missing reagent integration; stock alone may suffice.",
+          "sources": [
+            {
+              "url": "https://github.com/ajkatz/AKForeverBags/blob/bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c/README.md#L28-L62",
+              "type": "claimed",
+              "observedAt": "2026-11-25"
+            },
+            {
+              "url": "https://github.com/efileger/wow-signal/issues/10",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "releaseVerification": {
+          "rating": 3,
+          "revision": "bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c",
+          "rationale": "Lua test job passed and gates packaging at v0.5.1 assessed revision.",
+          "sources": [
+            {
+              "url": "https://github.com/ajkatz/AKForeverBags/actions/runs/43508297314/job/132171588273",
+              "type": "observed",
+              "observedAt": "2026-11-25"
+            },
+            {
+              "url": "https://github.com/ajkatz/AKForeverBags/blob/bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c/.github/workflows/release.yml",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ],
+          "checkOutcome": "passed"
+        },
+        "maintenance": {
+          "rating": null,
+          "revision": "bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c",
+          "rationale": "No review or issue-response evidence sampled.",
+          "sources": [
+            {
+              "url": "https://github.com/efileger/wow-signal/issues/10",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        },
+        "documentation": {
+          "rating": 2,
+          "revision": "bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c",
+          "rationale": "README explains setup, native UI and relevant features; runtime claims not independently measured.",
+          "sources": [
+            {
+              "url": "https://github.com/ajkatz/AKForeverBags/blob/bb6a7250ad2c32a0093f60beb8f6c4fbf4768d0c/README.md#L28-L62",
+              "type": "inspected",
+              "observedAt": "2026-11-25"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
