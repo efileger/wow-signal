@@ -1,0 +1,342 @@
+{
+  "methodVersion": "v0.1",
+  "calibrationSource": "https://github.com/efileger/wow-signal/issues/10",
+  "implementationIssue": "https://github.com/efileger/wow-signal/issues/12",
+  "calibrationSnapshot": "evidence/snapshots/2026-11-25T21-31-27.043Z-3a21de7f-58fb-4098-b450-c63033edcc37.json",
+  "calibrationAsOf": "2026-11-25T21:31:27.043Z",
+  "criterionOrder": [
+    "defaultPath",
+    "scope",
+    "differentiation",
+    "releaseVerification",
+    "maintenance",
+    "documentation"
+  ],
+  "coverageOrder": ["purpose", "engineering", "overall"],
+  "scoringCases": [
+    {
+      "id": "calibration-ak",
+      "addonId": "github:1379284941",
+      "ratings": [2, 3, 2, 3, null, 2],
+      "expected": {
+        "score": 82.2222222222,
+        "coverage": [100, 75, 90],
+        "range": [73.3333333333, 83.3333333333]
+      }
+    },
+    {
+      "id": "calibration-bagnon",
+      "addonId": "github:905553",
+      "ratings": [2, 3, 2, null, 2, 2],
+      "expected": {
+        "score": 73.3333333333,
+        "coverage": [100, 50, 80],
+        "range": [60, 80]
+      }
+    },
+    {
+      "id": "calibration-betterbags",
+      "addonId": "github:716469792",
+      "ratings": [1, 2, 1, 3, 2, 2],
+      "expected": {
+        "score": 60,
+        "coverage": [100, 100, 100],
+        "range": [60, 60]
+      }
+    },
+    {
+      "id": "calibration-bags-forever",
+      "addonId": "github:1411699833",
+      "ratings": [1, 2, null, null, null, 2],
+      "expected": {
+        "score": 55.5555555556,
+        "coverage": [75, 25, 55],
+        "range": [28.3333333333, 73.3333333333]
+      }
+    },
+    {
+      "id": "all-strong",
+      "ratings": [3, 3, 3, 3, 3, 3],
+      "expected": {
+        "score": 100,
+        "coverage": [100, 100, 100],
+        "range": [100, 100]
+      }
+    },
+    {
+      "id": "all-observed-adverse",
+      "ratings": [0, 0, 0, 0, 0, 0],
+      "expected": {
+        "score": 0,
+        "coverage": [100, 100, 100],
+        "range": [0, 0]
+      }
+    },
+    {
+      "id": "all-adequate",
+      "ratings": [2, 2, 2, 2, 2, 2],
+      "expected": {
+        "score": 66.6666666667,
+        "coverage": [100, 100, 100],
+        "range": [66.6666666667, 66.6666666667]
+      }
+    },
+    {
+      "id": "purpose-only-strong-ratings-but-engineering-zero",
+      "ratings": [3, 3, 3, 0, 0, 0],
+      "expected": {
+        "score": 60,
+        "coverage": [100, 100, 100],
+        "range": [60, 60]
+      }
+    },
+    {
+      "id": "engineering-only-strong-ratings-but-purpose-zero",
+      "ratings": [0, 0, 0, 3, 3, 3],
+      "expected": {
+        "score": 40,
+        "coverage": [100, 100, 100],
+        "range": [40, 40]
+      }
+    },
+    {
+      "id": "observed-default-harm",
+      "ratings": [0, 3, 3, 3, 3, 3],
+      "expected": {
+        "score": 75,
+        "coverage": [100, 100, 100],
+        "range": [75, 75]
+      }
+    },
+    {
+      "id": "unknown-default",
+      "ratings": [null, 3, 3, 3, 3, 3],
+      "expected": {
+        "score": 100,
+        "coverage": [58.3333333333, 100, 75],
+        "range": [75, 100]
+      }
+    },
+    {
+      "id": "asymmetric-sparse-pillars",
+      "ratings": [null, 3, null, 1, null, 0],
+      "expected": {
+        "score": 68.8888888889,
+        "coverage": [33.3333333333, 75, 50],
+        "range": [26.6666666667, 76.6666666667]
+      }
+    },
+    {
+      "id": "no-purpose-evidence",
+      "ratings": [null, null, null, 3, 3, 3],
+      "expected": {
+        "score": null,
+        "coverage": [0, 100, 40],
+        "range": [40, 100]
+      }
+    },
+    {
+      "id": "no-engineering-evidence",
+      "ratings": [3, 3, 3, null, null, null],
+      "expected": {
+        "score": null,
+        "coverage": [100, 0, 60],
+        "range": [60, 100]
+      }
+    },
+    {
+      "id": "no-evidence",
+      "ratings": [null, null, null, null, null, null],
+      "expected": {
+        "score": null,
+        "coverage": [0, 0, 0],
+        "range": [0, 100]
+      }
+    },
+    {
+      "id": "quiet-stable",
+      "ratings": [3, 3, 2, 3, 2, 3],
+      "expected": {
+        "score": 91.6666666667,
+        "coverage": [100, 100, 100],
+        "range": [91.6666666667, 91.6666666667]
+      }
+    },
+    {
+      "id": "scope-isolated",
+      "ratings": [0, 3, 0, 0, 0, 0],
+      "expected": {
+        "score": 20,
+        "coverage": [100, 100, 100],
+        "range": [20, 20]
+      }
+    },
+    {
+      "id": "differentiation-isolated",
+      "ratings": [0, 0, 3, 0, 0, 0],
+      "expected": {
+        "score": 15,
+        "coverage": [100, 100, 100],
+        "range": [15, 15]
+      }
+    },
+    {
+      "id": "release-verification-isolated",
+      "ratings": [0, 0, 0, 3, 0, 0],
+      "expected": {
+        "score": 20,
+        "coverage": [100, 100, 100],
+        "range": [20, 20]
+      }
+    },
+    {
+      "id": "maintenance-isolated",
+      "ratings": [0, 0, 0, 0, 3, 0],
+      "expected": {
+        "score": 10,
+        "coverage": [100, 100, 100],
+        "range": [10, 10]
+      }
+    },
+    {
+      "id": "documentation-isolated",
+      "ratings": [0, 0, 0, 0, 0, 3],
+      "expected": {
+        "score": 10,
+        "coverage": [100, 100, 100],
+        "range": [10, 10]
+      }
+    }
+  ],
+  "behaviorCases": [
+    {
+      "id": "declared-only",
+      "scoringCase": "all-strong",
+      "evidence": {
+        "declaredInterface": 16001,
+        "runtimeObservation": null
+      },
+      "expect": [
+        "Compatibility remains declared/provisional, not runtime verified; numeric score does not prove compatibility."
+      ]
+    },
+    {
+      "id": "known-incompatible",
+      "scoringCase": "all-strong",
+      "evidence": {
+        "declaredInterface": 16001,
+        "runtimeObservation": "observed incompatible on Forever"
+      },
+      "expect": [
+        "Retain conflicting declaration and observed incompatibility separately; do not recommend even with high criterion ratings."
+      ]
+    },
+    {
+      "id": "unknown-compatibility",
+      "scoringCase": "all-strong",
+      "evidence": {
+        "declaredInterface": null,
+        "runtimeObservation": null
+      },
+      "expect": [
+        "Compatibility remains unknown; do not infer it from the estimate."
+      ]
+    },
+    {
+      "id": "quiet-compatible-vs-active-compatible",
+      "scoringCase": "quiet-stable",
+      "evidence": {
+        "runtimeObservation": "observed compatible on Forever",
+        "quietLastChange": "2025-11-25",
+        "activeLastChange": "2026-11-25",
+        "maintenanceObservation": "Both demonstrated adequate maintenance for their needs; no outstanding known defects."
+      },
+      "expect": [
+        "Both retain identical scores and coverage with identical assessed criteria; low contribution activity alone does not reduce the score."
+      ]
+    },
+    {
+      "id": "stale-release-check-and-workflow-presence",
+      "scoringCase": "calibration-bagnon",
+      "evidence": {
+        "currentRevision": "revision-b",
+        "checkedRevision": "revision-a",
+        "checkedAt": "2025-11-25T00:00:00Z",
+        "asOf": "2026-11-25T00:00:00Z",
+        "workflowPresent": true,
+        "currentReleaseVerification": null,
+        "source": "https://example.invalid/fixtures/old-check",
+        "checkedOutcome": "passed"
+      },
+      "expect": [
+        "Old passing checks and current workflow presence do not establish release-bound verification at revision-b; unresolved current verification stays null.",
+        "Preserve old source, revision and observation date; expose that this evidence is not current for the assessed revision."
+      ]
+    },
+    {
+      "id": "overlapping-options-not-definitive-ranking",
+      "scoringCases": [
+        "calibration-ak",
+        "calibration-bagnon",
+        "calibration-betterbags",
+        "calibration-bags-forever"
+      ],
+      "expect": [
+        "AK and Bagnon ranges overlap despite different estimates; do not assert a definitive ranking.",
+        "BetterBags has full criterion coverage, not proof of runtime quality; retain coverage separately.",
+        "Do not penalize shared core bag/search functionality merely because alternatives exist."
+      ]
+    },
+    {
+      "id": "different-player-job",
+      "scoringCases": ["calibration-betterbags", "calibration-ak"],
+      "evidence": {
+        "defaultJob": "simple unified bags and search",
+        "alternativeJobs": [
+          "advanced categories",
+          "preserve native UI and reagent integration"
+        ]
+      },
+      "expect": [
+        "The calibration scores are for the default job only; BetterBags is a meaningful advanced-category alternative and AK a native-UI enhancement, not universally interchangeable options.",
+        "Never reuse a task-specific assessment as a different task's score without task-specific judgments."
+      ]
+    },
+    {
+      "id": "deterministic-tie-and-replay",
+      "scoringCase": "all-adequate",
+      "evidence": {
+        "addonIds": ["fixture:alpha", "fixture:beta"],
+        "asOf": "2026-11-25T00:00:00Z",
+        "source": "https://example.invalid/fixtures/tie"
+      },
+      "expect": [
+        "Identical inputs and method version yield identical assessment values, evidence pointers, dates and deterministic comparable-result handling, independent of wall-clock execution time.",
+        "Both scores and coverage are identical; no definitive quality winner is asserted."
+      ]
+    },
+    {
+      "id": "source-linked-assessment-replay",
+      "scoringCase": "all-adequate",
+      "evidence": {
+        "addonId": "fixture:provenance",
+        "clientInterface": 16001,
+        "revision": "revision-a",
+        "asOf": "2026-11-25T00:00:00Z",
+        "observation": {
+          "criterion": "defaultPath",
+          "rating": 2,
+          "sourceType": "inspected",
+          "source": "https://example.invalid/fixtures/defaults",
+          "observedAt": "2026-11-24T00:00:00Z",
+          "revision": "revision-a",
+          "rationale": "Core task is available immediately, with a caveat in setup."
+        }
+      },
+      "expect": [
+        "Preserve the rating, rationale, source type, source URL, observed timestamp, assessed revision and method version in the explainable output.",
+        "Preserve distinct assessment as-of and observation dates; do not substitute the execution timestamp."
+      ]
+    }
+  ]
+}
